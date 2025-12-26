@@ -80,7 +80,7 @@ CommandBox.AnchorPoint = Vector2.new(0, 0.600000024)
 CommandBox.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
 CommandBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CommandBox.BorderSizePixel = 0
-CommandBox.Position = UDim2.new(0, 800, 0, 518)
+CommandBox.Position = UDim2.new(0, 845, 0, 410)
 CommandBox.Size = UDim2.new(0, 311, 0, 67)
 CommandBox.ZIndex = -50
 CommandBox.Font = Enum.Font.Arial
@@ -499,7 +499,7 @@ end
 
 -- Scripts:
 
-local function GBTJT_fake_script() -- VinnysAdmin.MainScript 
+local function WNVU_fake_script() -- VinnysAdmin.MainScript 
 	local script = Instance.new('LocalScript', VinnysAdmin)
 	local req = require
 	local require = function(obj)
@@ -683,8 +683,8 @@ local function GBTJT_fake_script() -- VinnysAdmin.MainScript
 		end
 	end)
 end
-coroutine.wrap(GBTJT_fake_script)()
-local function WOVYLR_fake_script() -- Drag.drag 
+coroutine.wrap(WNVU_fake_script)()
+local function SVBBR_fake_script() -- Drag.drag 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -740,8 +740,8 @@ local function WOVYLR_fake_script() -- Drag.drag
 		end
 	end)
 end
-coroutine.wrap(WOVYLR_fake_script)()
-local function KIFFA_fake_script() -- hwindow.zd 
+coroutine.wrap(SVBBR_fake_script)()
+local function IYXVQTD_fake_script() -- hwindow.zd 
 	local script = Instance.new('LocalScript', hwindow)
 	local req = require
 	local require = function(obj)
@@ -762,8 +762,8 @@ local function KIFFA_fake_script() -- hwindow.zd
 	
 	script.Parent.ZIndex = BASE_Z
 end
-coroutine.wrap(KIFFA_fake_script)()
-local function ELYU_fake_script() -- closebtn.LocalScript 
+coroutine.wrap(IYXVQTD_fake_script)()
+local function TFBQEZR_fake_script() -- closebtn.LocalScript 
 	local script = Instance.new('LocalScript', closebtn)
 	local req = require
 	local require = function(obj)
@@ -781,8 +781,8 @@ local function ELYU_fake_script() -- closebtn.LocalScript
 		frame.Visible = false
 	end)
 end
-coroutine.wrap(ELYU_fake_script)()
-local function REGONM_fake_script() -- content.commands 
+coroutine.wrap(TFBQEZR_fake_script)()
+local function OUFX_fake_script() -- content.commands 
 	local script = Instance.new('LocalScript', content)
 	local req = require
 	local require = function(obj)
@@ -848,4 +848,4 @@ local function REGONM_fake_script() -- content.commands
 	
 	contentFrame.CanvasSize = UDim2.new(0, 0, 0, currentY)
 end
-coroutine.wrap(REGONM_fake_script)()
+coroutine.wrap(OUFX_fake_script)()
