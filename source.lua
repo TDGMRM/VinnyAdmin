@@ -499,7 +499,7 @@ end
 
 -- Scripts:
 
-local function BGRD_fake_script() -- VinnysAdmin.MainScript 
+local function GBTJT_fake_script() -- VinnysAdmin.MainScript 
 	local script = Instance.new('LocalScript', VinnysAdmin)
 	local req = require
 	local require = function(obj)
@@ -683,8 +683,65 @@ local function BGRD_fake_script() -- VinnysAdmin.MainScript
 		end
 	end)
 end
-coroutine.wrap(BGRD_fake_script)()
-local function NLFVOLY_fake_script() -- hwindow.zd 
+coroutine.wrap(GBTJT_fake_script)()
+local function WOVYLR_fake_script() -- Drag.drag 
+	local script = Instance.new('LocalScript', Drag)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local UIS = game:GetService("UserInputService")
+	local frame = script.Parent
+	
+	frame.Active = true
+	
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	UIS.InputBegan:Connect(function(input, gameProcessed)
+		if gameProcessed then return end
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			local mousePos = UIS:GetMouseLocation()
+			local absPos = frame.AbsolutePosition
+			local absSize = frame.AbsoluteSize
+	
+			if mousePos.X >= absPos.X and mousePos.X <= absPos.X + absSize.X and
+				mousePos.Y >= absPos.Y and mousePos.Y <= absPos.Y + absSize.Y then
+				dragging = true
+				dragStart = Vector2.new(mousePos.X, mousePos.Y)
+				startPos = frame.Position
+			end
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			local mousePos = UIS:GetMouseLocation()
+			local delta = mousePos - dragStart
+	
+			frame.Position = UDim2.new(
+				startPos.X.Scale,
+				startPos.X.Offset + delta.X,
+				startPos.Y.Scale,
+				startPos.Y.Offset + delta.Y
+			)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = false
+		end
+	end)
+end
+coroutine.wrap(WOVYLR_fake_script)()
+local function KIFFA_fake_script() -- hwindow.zd 
 	local script = Instance.new('LocalScript', hwindow)
 	local req = require
 	local require = function(obj)
@@ -705,8 +762,8 @@ local function NLFVOLY_fake_script() -- hwindow.zd
 	
 	script.Parent.ZIndex = BASE_Z
 end
-coroutine.wrap(NLFVOLY_fake_script)()
-local function IILSLSE_fake_script() -- closebtn.LocalScript 
+coroutine.wrap(KIFFA_fake_script)()
+local function ELYU_fake_script() -- closebtn.LocalScript 
 	local script = Instance.new('LocalScript', closebtn)
 	local req = require
 	local require = function(obj)
@@ -724,8 +781,8 @@ local function IILSLSE_fake_script() -- closebtn.LocalScript
 		frame.Visible = false
 	end)
 end
-coroutine.wrap(IILSLSE_fake_script)()
-local function HJTXNSV_fake_script() -- content.commands 
+coroutine.wrap(ELYU_fake_script)()
+local function REGONM_fake_script() -- content.commands 
 	local script = Instance.new('LocalScript', content)
 	local req = require
 	local require = function(obj)
@@ -791,55 +848,4 @@ local function HJTXNSV_fake_script() -- content.commands
 	
 	contentFrame.CanvasSize = UDim2.new(0, 0, 0, currentY)
 end
-coroutine.wrap(HJTXNSV_fake_script)()
-local function TGYVWY_fake_script() -- hwindow.drag 
-	local script = Instance.new('LocalScript', hwindow)
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-	local UIS = game:GetService("UserInputService")
-	
-	local frame = script.Parent
-	frame.Active = true
-	
-	local dragging = false
-	local dragStart
-	local startPos
-	
-	local function update(input)
-		local delta = input.Position - dragStart
-		frame.Position = UDim2.new(
-			startPos.X.Scale,
-			startPos.X.Offset + delta.X,
-			startPos.Y.Scale,
-			startPos.Y.Offset + delta.Y
-		)
-	end
-	
-	frame.InputBegan:Connect(function(input)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			dragging = true
-			dragStart = input.Position
-			startPos = frame.Position
-	
-			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
-			end)
-		end
-	end)
-	
-	UIS.InputChanged:Connect(function(input)
-		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-			update(input)
-		end
-	end)
-end
-coroutine.wrap(TGYVWY_fake_script)()
+coroutine.wrap(REGONM_fake_script)()
