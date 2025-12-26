@@ -12,13 +12,23 @@ local ShadowBG2 = Instance.new("ImageLabel")
 local CommandBox = Instance.new("TextBox")
 local UICorner = Instance.new("UICorner")
 local Windows = Instance.new("Folder")
+local hwindow = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local DragDeco1 = Instance.new("Frame")
+local Drag = Instance.new("Frame")
+local wname = Instance.new("TextLabel")
+local DragDeco2 = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ShadowBG = Instance.new("ImageLabel")
+local closebtn = Instance.new("TextButton")
+local content = Instance.new("Frame")
 
 --Properties:
 
 VinnysAdmin.Name = "Vinny's Admin"
 VinnysAdmin.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 VinnysAdmin.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-VinnysAdmin.DisplayOrder = 100
+VinnysAdmin.DisplayOrder = 150
 VinnysAdmin.ResetOnSpawn = false
 
 Commands.Name = "Commands"
@@ -84,6 +94,99 @@ UICorner.Parent = CommandBox
 Windows.Name = "Windows"
 Windows.Parent = VinnysAdmin
 
+hwindow.Name = "hwindow"
+hwindow.Parent = Windows
+hwindow.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
+hwindow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+hwindow.BorderSizePixel = 0
+hwindow.Position = UDim2.new(0.384502798, 0, 0.21793291, 0)
+hwindow.Size = UDim2.new(0, 430, 0, 495)
+hwindow.Visible = false
+hwindow.ZIndex = 100
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = hwindow
+
+DragDeco1.Name = "DragDeco1"
+DragDeco1.Parent = hwindow
+DragDeco1.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+DragDeco1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DragDeco1.BorderSizePixel = 0
+DragDeco1.Position = UDim2.new(0, 0, 0.0121212117, 0)
+DragDeco1.Size = UDim2.new(0, 430, 0, 30)
+DragDeco1.ZIndex = 100
+
+Drag.Name = "Drag"
+Drag.Parent = hwindow
+Drag.Active = true
+Drag.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Drag.BackgroundTransparency = 1.000
+Drag.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Drag.BorderSizePixel = 0
+Drag.Position = UDim2.new(0, 0, -0.00606060587, 0)
+Drag.Size = UDim2.new(0, 430, 0, 39)
+Drag.ZIndex = 100
+
+wname.Name = "wname"
+wname.Parent = hwindow
+wname.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+wname.BackgroundTransparency = 1.000
+wname.BorderColor3 = Color3.fromRGB(0, 0, 0)
+wname.BorderSizePixel = 0
+wname.Position = UDim2.new(0.379418671, 0, -0.00102021184, 0)
+wname.Size = UDim2.new(0, 103, 0, 36)
+wname.ZIndex = 100
+wname.Font = Enum.Font.ArialBold
+wname.Text = "Help Window"
+wname.TextColor3 = Color3.fromRGB(255, 255, 255)
+wname.TextSize = 17.000
+
+DragDeco2.Name = "DragDeco2"
+DragDeco2.Parent = hwindow
+DragDeco2.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+DragDeco2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DragDeco2.BorderSizePixel = 0
+DragDeco2.Position = UDim2.new(0, 0, -0.00606060587, 0)
+DragDeco2.Size = UDim2.new(0, 430, 0, 13)
+DragDeco2.ZIndex = 100
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = DragDeco2
+
+ShadowBG.Name = "ShadowBG"
+ShadowBG.Parent = hwindow
+ShadowBG.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShadowBG.BackgroundTransparency = 1.000
+ShadowBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ShadowBG.BorderSizePixel = 0
+ShadowBG.Position = UDim2.new(0, 0, 0.0717070624, 0)
+ShadowBG.Size = UDim2.new(0, 430, 0, 26)
+ShadowBG.ZIndex = 100
+ShadowBG.Image = "rbxassetid://100523630431824"
+
+closebtn.Name = "closebtn"
+closebtn.Parent = hwindow
+closebtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+closebtn.BackgroundTransparency = 1.000
+closebtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+closebtn.BorderSizePixel = 0
+closebtn.Position = UDim2.new(0.900348902, 0, 0, 0)
+closebtn.Size = UDim2.new(0, 36, 0, 36)
+closebtn.ZIndex = 100
+closebtn.Font = Enum.Font.Unknown
+closebtn.Text = "X"
+closebtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+closebtn.TextSize = 17.000
+
+content.Name = "content"
+content.Parent = hwindow
+content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+content.BackgroundTransparency = 1.000
+content.BorderColor3 = Color3.fromRGB(0, 0, 0)
+content.BorderSizePixel = 0
+content.Position = UDim2.new(-3.54855558e-08, 0, 0.0727272704, 0)
+content.Size = UDim2.new(0, 430, 0, 459)
+
 -- Module Scripts:
 
 local fake_module_scripts = {}
@@ -94,6 +197,9 @@ do -- Commands.speed
 	local function module_script()
 		local SpeedCommand = {}
 		SpeedCommand.Name = "speed"
+		SpeedCommand.HelpText = [[
+		speed [number/reset] - Set your walk speed to the specified number or reset to default.
+		]]
 		
 		function SpeedCommand.Execute(player, speed)
 			local character = player.Character
@@ -123,14 +229,20 @@ do -- Commands.tool
 	local function module_script()
 		local ToolCommand = {}
 		ToolCommand.Name = "tool"
+		ToolCommand.HelpText = [[
+		tool new <toolName> - Creates a tool with the given name.
+		tool remove <toolName> - Removes the tool with the given name.
+		tool settings - Toggles the visibility of the settings window.
+		]]
 		
 		function ToolCommand.Execute(player, action, toolName)
 			if not action then return end
 			action = action:lower()
 		
-			if action == "settings" then
-				local playerGui = player:WaitForChild("PlayerGui")
+			local playerGui = player:WaitForChild("PlayerGui")
+			local backpack = player:WaitForChild("Backpack")
 		
+			if action == "settings" then
 				for _, gui in ipairs(playerGui:GetChildren()) do
 					if gui:IsA("ScreenGui") then
 						local windows = gui:FindFirstChild("Windows")
@@ -148,8 +260,6 @@ do -- Commands.tool
 		
 			if not toolName then return end
 		
-			local backpack = player:WaitForChild("Backpack")
-		
 			if action == "new" then
 				if backpack:FindFirstChild(toolName) then return end
 		
@@ -158,9 +268,7 @@ do -- Commands.tool
 				tool.RequiresHandle = false
 				tool.Parent = backpack
 				return
-			end
-		
-			if action == "remove" then
+			elseif action == "remove" then
 				local tool = backpack:FindFirstChild(toolName)
 				if tool then
 					tool:Destroy()
@@ -178,6 +286,12 @@ do -- Commands.fly
 	local function module_script()
 		local FlyCommand = {}
 		FlyCommand.Name = "fly"
+		FlyCommand.HelpText = [[
+		fly [speed] - set fly speed.
+		fly speed <number> - Set fly speed.
+		fly smoothness <on/off> - Toggle smooth acceleration.
+		fly - Toggle flying / Stop flying.
+		]]
 		
 		local tpwalking = false
 		local speeds = 50
@@ -342,11 +456,50 @@ do -- Commands.fly
 	end
 	fake_module_scripts[script] = module_script
 end
+do -- Commands.help
+	local script = Instance.new('ModuleScript', Commands)
+	script.Name = "help"
+	local function module_script()
+		local HelpCommand = {}
+		HelpCommand.Name = "help"
+		HelpCommand.HelpText = [[
+		help - Toggles the visibility of the help window.
+		]]
+		
+		local function findDescendantByName(parent, name)
+			for _, child in ipairs(parent:GetChildren()) do
+				if child.Name == name then
+					return child
+				else
+					local found = findDescendantByName(child, name)
+					if found then return found end
+				end
+			end
+			return nil
+		end
+		
+		function HelpCommand.Execute(player)
+			local playerGui = player:FindFirstChildOfClass("PlayerGui")
+			if not playerGui then return end
+		
+			local vinsAdminGui = playerGui:FindFirstChild("Vinny's Admin")
+			if not vinsAdminGui then return end
+		
+			local hwindow = findDescendantByName(vinsAdminGui, "hwindow")
+			if not hwindow then return end
+		
+			hwindow.Visible = not hwindow.Visible
+		end
+		
+		return HelpCommand
+	end
+	fake_module_scripts[script] = module_script
+end
 
 
 -- Scripts:
 
-local function FFMX_fake_script() -- VinnysAdmin.MainScript 
+local function BGRD_fake_script() -- VinnysAdmin.MainScript 
 	local script = Instance.new('LocalScript', VinnysAdmin)
 	local req = require
 	local require = function(obj)
@@ -530,4 +683,163 @@ local function FFMX_fake_script() -- VinnysAdmin.MainScript
 		end
 	end)
 end
-coroutine.wrap(FFMX_fake_script)()
+coroutine.wrap(BGRD_fake_script)()
+local function NLFVOLY_fake_script() -- hwindow.zd 
+	local script = Instance.new('LocalScript', hwindow)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local BASE_Z = 100
+	
+	for _, v in ipairs(script.Parent:GetDescendants()) do
+		if v:IsA("GuiObject") then
+			v.ZIndex = BASE_Z
+		end
+	end
+	
+	script.Parent.ZIndex = BASE_Z
+end
+coroutine.wrap(NLFVOLY_fake_script)()
+local function IILSLSE_fake_script() -- closebtn.LocalScript 
+	local script = Instance.new('LocalScript', closebtn)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local button = script.Parent
+	local frame = button.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		frame.Visible = false
+	end)
+end
+coroutine.wrap(IILSLSE_fake_script)()
+local function HJTXNSV_fake_script() -- content.commands 
+	local script = Instance.new('LocalScript', content)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local contentFrame = script.Parent
+	local vinsAdmin = script.Parent:FindFirstAncestor("Vinny's Admin")
+	
+	if not vinsAdmin then
+		return
+	end
+	
+	local commandsFolder = vinsAdmin:FindFirstChild("Commands")
+	
+	if not commandsFolder then
+		return
+	end
+	
+	-- Clear old labels
+	for _, child in ipairs(contentFrame:GetChildren()) do
+		if child:IsA("TextLabel") then
+			child:Destroy()
+		end
+	end
+	
+	local padding = 2
+	local labelHeight = 40
+	local currentY = 0
+	
+	local function createHelpLabel(name, helpText)
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, -20, 0, labelHeight)
+		label.Position = UDim2.new(0, 10, 0, currentY)
+		label.BackgroundTransparency = 1
+		label.BorderSizePixel = 0
+		label.TextColor3 = Color3.new(1, 1, 1)
+		label.TextWrapped = true
+		label.TextXAlignment = Enum.TextXAlignment.Left
+		label.TextYAlignment = Enum.TextYAlignment.Top
+		label.Font = Enum.Font.SourceSans
+		label.TextSize = 16
+		label.Text = "[Command: " .. tostring(name) .. "]\n" .. tostring(helpText)
+		label.Parent = contentFrame
+	
+		currentY = currentY + labelHeight + padding
+	end
+	
+	for _, moduleScript in ipairs(commandsFolder:GetChildren()) do
+		if moduleScript:IsA("ModuleScript") then
+			local success, commandModule = pcall(require, moduleScript)
+			if success and type(commandModule) == "table" then
+				if commandModule.Name and commandModule.HelpText then
+					createHelpLabel(commandModule.Name, commandModule.HelpText)
+				end
+			end
+		end
+	end
+	
+	contentFrame.CanvasSize = UDim2.new(0, 0, 0, currentY)
+end
+coroutine.wrap(HJTXNSV_fake_script)()
+local function TGYVWY_fake_script() -- hwindow.drag 
+	local script = Instance.new('LocalScript', hwindow)
+	local req = require
+	local require = function(obj)
+		local fake = fake_module_scripts[obj]
+		if fake then
+			return fake()
+		end
+		return req(obj)
+	end
+
+	local UIS = game:GetService("UserInputService")
+	
+	local frame = script.Parent
+	frame.Active = true
+	
+	local dragging = false
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		frame.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			dragging = true
+			dragStart = input.Position
+			startPos = frame.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(TGYVWY_fake_script)()
