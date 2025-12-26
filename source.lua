@@ -81,7 +81,7 @@ CommandBox.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
 CommandBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CommandBox.BorderSizePixel = 0
 CommandBox.ClipsDescendants = true
-CommandBox.Position = UDim2.new(0, 845, 0, 450)
+CommandBox.Position = UDim2.new(0, 845, 0, 410)
 CommandBox.Size = UDim2.new(0, 311, 0, 67)
 CommandBox.ZIndex = -50
 CommandBox.Font = Enum.Font.Arial
@@ -500,7 +500,7 @@ end
 
 -- Scripts:
 
-local function HIUYWJ_fake_script() -- VinnysAdmin.MainScript 
+local function LFKPS_fake_script() -- VinnysAdmin.MainScript 
 	local script = Instance.new('LocalScript', VinnysAdmin)
 	local req = require
 	local require = function(obj)
@@ -684,8 +684,8 @@ local function HIUYWJ_fake_script() -- VinnysAdmin.MainScript
 		end
 	end)
 end
-coroutine.wrap(HIUYWJ_fake_script)()
-local function ABBXAE_fake_script() -- Drag.drag 
+coroutine.wrap(LFKPS_fake_script)()
+local function CBES_fake_script() -- Drag.drag 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -741,8 +741,8 @@ local function ABBXAE_fake_script() -- Drag.drag
 		end
 	end)
 end
-coroutine.wrap(ABBXAE_fake_script)()
-local function HLFDQ_fake_script() -- hwindow.zd 
+coroutine.wrap(CBES_fake_script)()
+local function DMMBTQ_fake_script() -- hwindow.zd 
 	local script = Instance.new('LocalScript', hwindow)
 	local req = require
 	local require = function(obj)
@@ -763,8 +763,8 @@ local function HLFDQ_fake_script() -- hwindow.zd
 	
 	script.Parent.ZIndex = BASE_Z
 end
-coroutine.wrap(HLFDQ_fake_script)()
-local function HSECF_fake_script() -- closebtn.LocalScript 
+coroutine.wrap(DMMBTQ_fake_script)()
+local function MRQKZ_fake_script() -- closebtn.LocalScript 
 	local script = Instance.new('LocalScript', closebtn)
 	local req = require
 	local require = function(obj)
@@ -782,8 +782,8 @@ local function HSECF_fake_script() -- closebtn.LocalScript
 		frame.Visible = false
 	end)
 end
-coroutine.wrap(HSECF_fake_script)()
-local function KDKV_fake_script() -- content.commands 
+coroutine.wrap(MRQKZ_fake_script)()
+local function ZPCDSUW_fake_script() -- content.commands 
 	local script = Instance.new('LocalScript', content)
 	local req = require
 	local require = function(obj)
@@ -849,4 +849,4 @@ local function KDKV_fake_script() -- content.commands
 	
 	contentFrame.CanvasSize = UDim2.new(0, 0, 0, currentY)
 end
-coroutine.wrap(KDKV_fake_script)()
+coroutine.wrap(ZPCDSUW_fake_script)()
