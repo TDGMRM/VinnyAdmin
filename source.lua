@@ -80,7 +80,7 @@ CommandBox.AnchorPoint = Vector2.new(0, 0.600000024)
 CommandBox.BackgroundColor3 = Color3.fromRGB(116, 116, 116)
 CommandBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CommandBox.BorderSizePixel = 0
-CommandBox.Position = UDim2.new(0, 800, 0, 407)
+CommandBox.Position = UDim2.new(0.5, -155, 0.5, 5)
 CommandBox.Size = UDim2.new(0, 311, 0, 67)
 CommandBox.ZIndex = -50
 CommandBox.Font = Enum.Font.Arial
@@ -499,7 +499,7 @@ end
 
 -- Scripts:
 
-local function NMTCR_fake_script() -- VinnysAdmin.MainScript 
+local function KCKWS_fake_script() -- VinnysAdmin.MainScript 
 	local script = Instance.new('LocalScript', VinnysAdmin)
 	local req = require
 	local require = function(obj)
@@ -683,8 +683,8 @@ local function NMTCR_fake_script() -- VinnysAdmin.MainScript
 		end
 	end)
 end
-coroutine.wrap(NMTCR_fake_script)()
-local function RJWEKMS_fake_script() -- Drag.drag 
+coroutine.wrap(KCKWS_fake_script)()
+local function OJHGLKW_fake_script() -- Drag.drag 
 	local script = Instance.new('LocalScript', Drag)
 	local req = require
 	local require = function(obj)
@@ -696,41 +696,31 @@ local function RJWEKMS_fake_script() -- Drag.drag
 	end
 
 	local UIS = game:GetService("UserInputService")
+	local RunService = game:GetService("RunService")
 	local frame = script.Parent
 	
 	frame.Active = true
 	
 	local dragging = false
-	local dragStart
-	local startPos
+	local dragOffset = Vector2.new()
 	
-	UIS.InputBegan:Connect(function(input, gameProcessed)
-		if gameProcessed then return end
+	local function isMouseOverFrame(pos)
+		local absPos = frame.AbsolutePosition
+		local absSize = frame.AbsoluteSize
+	
+		return pos.X >= absPos.X
+			and pos.X <= absPos.X + absSize.X
+			and pos.Y >= absPos.Y
+			and pos.Y <= absPos.Y + absSize.Y
+	end
+	
+	UIS.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
 			local mousePos = UIS:GetMouseLocation()
-			local absPos = frame.AbsolutePosition
-			local absSize = frame.AbsoluteSize
-	
-			if mousePos.X >= absPos.X and mousePos.X <= absPos.X + absSize.X and
-				mousePos.Y >= absPos.Y and mousePos.Y <= absPos.Y + absSize.Y then
+			if isMouseOverFrame(mousePos) then
 				dragging = true
-				dragStart = Vector2.new(mousePos.X, mousePos.Y)
-				startPos = frame.Position
+				dragOffset = mousePos - frame.AbsolutePosition
 			end
-		end
-	end)
-	
-	UIS.InputChanged:Connect(function(input)
-		if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
-			local mousePos = UIS:GetMouseLocation()
-			local delta = mousePos - dragStart
-	
-			frame.Position = UDim2.new(
-				startPos.X.Scale,
-				startPos.X.Offset + delta.X,
-				startPos.Y.Scale,
-				startPos.Y.Offset + delta.Y
-			)
 		end
 	end)
 	
@@ -739,9 +729,19 @@ local function RJWEKMS_fake_script() -- Drag.drag
 			dragging = false
 		end
 	end)
+	
+	RunService.RenderStepped:Connect(function()
+		if dragging then
+			local mousePos = UIS:GetMouseLocation()
+			frame.Position = UDim2.fromOffset(
+				mousePos.X - dragOffset.X,
+				mousePos.Y - dragOffset.Y
+			)
+		end
+	end)
 end
-coroutine.wrap(RJWEKMS_fake_script)()
-local function XQYENHV_fake_script() -- hwindow.zd 
+coroutine.wrap(OJHGLKW_fake_script)()
+local function KHMSUUY_fake_script() -- hwindow.zd 
 	local script = Instance.new('LocalScript', hwindow)
 	local req = require
 	local require = function(obj)
@@ -762,8 +762,8 @@ local function XQYENHV_fake_script() -- hwindow.zd
 	
 	script.Parent.ZIndex = BASE_Z
 end
-coroutine.wrap(XQYENHV_fake_script)()
-local function DLTS_fake_script() -- closebtn.LocalScript 
+coroutine.wrap(KHMSUUY_fake_script)()
+local function ASTFXLR_fake_script() -- closebtn.LocalScript 
 	local script = Instance.new('LocalScript', closebtn)
 	local req = require
 	local require = function(obj)
@@ -781,8 +781,8 @@ local function DLTS_fake_script() -- closebtn.LocalScript
 		frame.Visible = false
 	end)
 end
-coroutine.wrap(DLTS_fake_script)()
-local function VESCFP_fake_script() -- content.commands 
+coroutine.wrap(ASTFXLR_fake_script)()
+local function WZFGDYU_fake_script() -- content.commands 
 	local script = Instance.new('LocalScript', content)
 	local req = require
 	local require = function(obj)
@@ -848,4 +848,4 @@ local function VESCFP_fake_script() -- content.commands
 	
 	contentFrame.CanvasSize = UDim2.new(0, 0, 0, currentY)
 end
-coroutine.wrap(VESCFP_fake_script)()
+coroutine.wrap(WZFGDYU_fake_script)()
